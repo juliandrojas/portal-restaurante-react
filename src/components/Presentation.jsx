@@ -12,9 +12,10 @@ export default function Presentation() {
                         <h1 className='strong'>Portal Restaurante</h1>
                         <h3 className='font-weight normal font-italic'>Nuestro lema es servir con agrado al público</h3>
                     </CardTitle>
-                    <CardImg src='logo.png' alt='Logo' />
+                    <CardImg src='logo.png' alt='Logo Empresa' />
                 </CardBody>
             </Card>
+            
         </div>
     </>
   )

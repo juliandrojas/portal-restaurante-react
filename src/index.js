@@ -1,11 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-//import './indice.css';
-import Index from './pages/Index';
+import React from 'react'
+import ReactDOM from 'react-dom/client';
+import Index from './views/Index';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Index />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+    <>
+        <Index />
+    </>
+)
