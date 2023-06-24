@@ -25,14 +25,11 @@ function Navigation() {
               <NavLink href="/">Inicio</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/">Sobre nosotros</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/">Nuestro menú</NavLink>
-            </NavItem>
-            <NavItem>
               <NavLink href="/">Reservas</NavLink>
-            </NavItem> 
+            </NavItem>
+            <NavItem>
+              <NavLink href="/">Gestionar Reservas</NavLink>
+            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>

@@ -3,6 +3,7 @@ import Navigation from '../components/NavbarNavigation'
 import Presentation from '../components/Presentation';
 import CardMenu from '../components/Card';
 import AboutUs from '../components/AboutUs';
+import Formulary from '../components/Formulary';
 
 function Index() {
   return (
@@ -11,6 +12,7 @@ function Index() {
       <Presentation />
       <AboutUs />
       <CardMenu />
+      <Formulary />
     </>
   )
 }
