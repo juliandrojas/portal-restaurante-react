@@ -16,7 +16,7 @@ function Navigation() {
 
   return (
     <div>
-      <Navbar color="dark" dark expand="md">
+      <Navbar color="dark" dark expand="md" className='fixed-top'>
         <NavbarBrand href="/" className='mr-auto'>Portal Restaurante React</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

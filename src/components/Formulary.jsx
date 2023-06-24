@@ -92,6 +92,8 @@ function Formulary() {
     <>
       {/* Componente Formulary */}
       <h1 className="text-center">Reservas</h1>
+      <h2 className="text-center font-weight-normal">Usa el siguiente formulario para hacer tu reserva</h2>
+      <br />
       <div className="container">
         <Card>
           <CardBody>
