@@ -16,16 +16,16 @@ import {
 import { FaCheck, FaEdit } from "react-icons/fa";
 
 function Formulary() {
-  //Hooks para detectar el cambio en los componentes del formulario
+  // Hooks para detectar el cambio en los componentes del formulario
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
   const [correo, setCorreo] = useState("");
   const [telefono, setTelefono] = useState("");
-  const [acompañantes, setAcompañantes] = useState("");
+  const [acompanantes, setAcompanantes] = useState("");
   const [fecha, setFecha] = useState("");
   const [hora, setHora] = useState("");
   const [observaciones, setObservaciones] = useState("");
-  //Hook para detectar la apertura del modal para confirmacion
+  // Hook para detectar la apertura del modal para confirmacion
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleChangeNombre = (event) => {
@@ -44,9 +44,9 @@ function Formulary() {
     const telefonoValue = event.target.value;
     setTelefono(telefonoValue);
   };
-  const handleChangeAcompañantes = (event) => {
-    const acompañantesValue = event.target.value;
-    setAcompañantes(acompañantesValue);
+  const handleChangeacompanantes = (event) => {
+    const acompanantesValue = event.target.value;
+    setAcompanantes(acompanantesValue);
   };
   const handleChangeFecha = (event) => {
     const fechaValue = event.target.value;
@@ -61,28 +61,48 @@ function Formulary() {
     setObservaciones(observacionesValue);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (
       nombre.length > 0 &&
       apellido.length > 0 &&
       correo.length > 0 &&
       telefono.length > 0 &&
-      acompañantes.length > 0 &&
+      acompanantes.length > 0 &&
       fecha !== "" &&
       hora !== "" &&
       observaciones !== ""
     ) {
       setModalOpen(true);
-      console.log({
+
+      const formData = {
         nombre,
         apellido,
         correo,
         telefono,
-        acompañantes,
+        acompanantes,
         fecha,
         hora,
         observaciones,
-      });
+      };
+
+      try {
+        const response = await fetch("http://localhost:3001/api/reserva/crearReserva", {
+          method: "POST", // O el método que corresponda (GET, PUT, DELETE, etc.)
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+
+        if (response.ok) {
+          console.log("La solicitud fue exitosa")
+        } else {
+          // La solicitud falló
+          // Maneja el error de acuerdo a tus necesidades
+        }
+      } catch (error) {
+        // Maneja cualquier error de red u otra excepción
+      }
     } else {
       alert("Completa todos los campos");
     }
@@ -92,10 +112,12 @@ function Formulary() {
     <>
       {/* Componente Formulary */}
       <h1 className="text-center">Reservas</h1>
-      <h2 className="text-center font-weight-normal">Usa el siguiente formulario para hacer tu reserva</h2>
+      <h2 className="text-center font-weight-normal">
+        Usa el siguiente formulario para hacer tu reserva
+      </h2>
       <br />
       <div className="container">
-        <Card>
+        <Card id="reservas">
           <CardBody>
             <Form>
               <FormGroup>
@@ -149,13 +171,13 @@ function Formulary() {
                 />
               </FormGroup>
               <FormGroup>
-                <Label for="">Número de acompañantes</Label>
+                <Label for="">Número de acompanantes</Label>
                 <Input
                   id=""
                   name=""
-                  placeholder="Digita el número de acompañantes"
+                  placeholder="Digita el número de acompanantes"
                   type="number"
-                  onChange={handleChangeAcompañantes}
+                  onChange={handleChangeacompanantes}
                 />
               </FormGroup>
               <FormGroup>

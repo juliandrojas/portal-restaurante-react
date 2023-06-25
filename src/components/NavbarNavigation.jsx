@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Collapse,
   Navbar,
@@ -8,12 +9,22 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
+import './../styles.css';
+
 
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
 
+  const navigate = useNavigate();
+
+  const handleClickIndex = () => {
+    navigate('/');
+  };
+  const handleClickSearch = () => {
+    navigate('/searchReserva');
+  };
   return (
     <div>
       <Navbar color="dark" dark expand="md" className='fixed-top'>
@@ -22,13 +33,13 @@ function Navigation() {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink href="/">Inicio</NavLink>
+              <NavLink className="itemNavigation" onClick={handleClickIndex}>Inicio</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/">Reservas</NavLink>
+              <NavLink className="itemNavigation" href="/reservas">Reservas</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/">Gestionar Reservas</NavLink>
+              <NavLink className="itemNavigation" onClick={handleClickSearch}>Gestionar Reservas</NavLink>
             </NavItem>
           </Nav>
         </Collapse>

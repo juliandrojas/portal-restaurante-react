@@ -4,6 +4,7 @@ import Presentation from '../components/Presentation';
 import CardMenu from '../components/Card';
 import AboutUs from '../components/AboutUs';
 import Formulary from '../components/Formulary';
+import Footer from '../components/Footer';
 
 function Index() {
   return (
@@ -14,6 +15,7 @@ function Index() {
       <AboutUs />
       <CardMenu />
       <Formulary />
+      <Footer />
     </>
   )
 }

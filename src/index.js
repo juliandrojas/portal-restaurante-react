@@ -1,16 +1,24 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { render } from 'react-dom';
 import Index from './views/Index';
-//Navigation
-//import { Routes, Route } from 'react-router-dom';
+import Search from './views/Search';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <>
-      <Index />
-        {/* <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/about" element={<About />} />
-      </Routes> */}
-    </>
-)
+/*const Home = () => (
+  <div>
+    <h1>Home</h1>
+    <Link to="/about">Go to About</Link>
+  </div>
+);*/
+
+const App = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Index />} />
+      <Route path="/searchReserva" element={<Search />} />
+      <Route path="/search" element={<Search />} />
+    </Routes>
+  </BrowserRouter>
+);
+
+render(<App />, document.getElementById('root'));
