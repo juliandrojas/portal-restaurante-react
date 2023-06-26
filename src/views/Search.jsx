@@ -1,6 +1,6 @@
 import React from 'react'
 import Navigation from '../components/NavbarNavigation'
-//import SearchReservation from '../components/SearchReservation'
+import CardMenu from '../components/Card'
 
 export default function Search() {
   
@@ -8,7 +8,7 @@ export default function Search() {
     <>
       <Navigation />
       {/* <SearchReservation /> */}
-      <h1 className='text-center'>Buscar Reservación</h1>
+      <CardMenu />
         
     </>
   )
